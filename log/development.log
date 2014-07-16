@@ -1,0 +1,2620 @@
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-15 17:23:40 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/railties-4.1.4/lib/rails/templates/rails/welcome/index.html.erb (2.2ms)
+Completed 200 OK in 31ms (Views: 10.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateSoups (20140715152534)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "soups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "featured" boolean, "category_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140715152534"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Migrating to CreateCategories (20140715152627)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140715152627"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "soups" ("created_at", "featured", "name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-07-15 15:30:41.081411"], ["featured", "t"], ["name", "Tonkatsu"], ["updated_at", "2014-07-15 15:30:41.081411"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "soups" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-07-15 15:31:51.775350"], ["name", "Tomato Bisque"], ["updated_at", "2014-07-15 15:31:51.775350"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36mSoup Load (0.2ms)[0m  [1mSELECT  "soups".* FROM "soups"   ORDER BY "soups"."id" DESC LIMIT 1[0m
+  [1m[35mSoup Load (0.2ms)[0m  SELECT "soups".* FROM "soups"
+  [1m[36mSoup Load (0.4ms)[0m  [1mSELECT "soups".* FROM "soups"  WHERE "soups"."name" = 'Tonkatsu'[0m
+  [1m[35mSoup Load (0.2ms)[0m  SELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSoup Load (0.3ms)[0m  [1mSELECT  "soups".* FROM "soups"  WHERE "soups"."name" = 'Tonkatsu'  ORDER BY "soups"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "soups" SET "featured" = ?, "updated_at" = ? WHERE "soups"."id" = 1[0m  [["featured", "f"], ["updated_at", "2014-07-15 15:35:40.727637"]]
+  [1m[35m (99.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "soups" SET "featured" = ?, "name" = ?, "updated_at" = ? WHERE "soups"."id" = 1  [["featured", "t"], ["name", "Tonkotsu Ramen"], ["updated_at", "2014-07-15 15:36:39.358357"]]
+  [1m[36m (99.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mSoup Load (0.2ms)[0m  SELECT  "soups".* FROM "soups"   ORDER BY "soups"."id" DESC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "soups" WHERE "soups"."id" = ?  [["id", 2]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "soups"
+  [1m[36mSoup Load (0.2ms)[0m  [1mSELECT "soups".* FROM "soups"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "soups" ("created_at", "featured", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-07-15 15:38:28.817989"], ["featured", "f"], ["name", "French Onion"], ["updated_at", "2014-07-15 15:38:28.817989"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mSoup Load (0.2ms)[0m  [1mSELECT "soups".* FROM "soups"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-15 17:40:56 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/railties-4.1.4/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "categories" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-07-15 15:42:25.274406"], ["name", "Ramen"], ["updated_at", "2014-07-15 15:42:25.274406"]]
+  [1m[35m (100.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "categories" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-07-15 15:43:04.186654"], ["name", "Bouillon"], ["updated_at", "2014-07-15 15:43:04.186654"]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mSoup Load (0.2ms)[0m  [1mSELECT  "soups".* FROM "soups"   ORDER BY "soups"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "soups" SET "name" = ?, "updated_at" = ? WHERE "soups"."id" = 1[0m  [["name", "Tonkotsu"], ["updated_at", "2014-07-15 15:44:19.249804"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "soups" SET "category_id" = ?, "updated_at" = ? WHERE "soups"."id" = 1  [["category_id", 1], ["updated_at", "2014-07-15 15:44:49.701968"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mSoup Load (0.2ms)[0m  SELECT  "soups".* FROM "soups"   ORDER BY "soups"."id" DESC LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories"   ORDER BY "categories"."id" DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "soups" SET "category_id" = ?, "updated_at" = ? WHERE "soups"."id" = 1[0m  [["category_id", 2], ["updated_at", "2014-07-15 15:46:05.514357"]]
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT  "categories".* FROM "categories"   ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "soups" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-07-15 15:48:23.446210"], ["name", "Beef flavor"], ["updated_at", "2014-07-15 15:48:23.446210"]]
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36mSoup Load (0.2ms)[0m  [1mSELECT "soups".* FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "soups" SET "category_id" = ?, "updated_at" = ? WHERE "soups"."id" = 4[0m  [["category_id", 1], ["updated_at", "2014-07-15 15:49:26.127898"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSoup Exists (0.2ms)[0m  SELECT  1 AS one FROM "soups"  WHERE "soups"."name" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-07-15 18:01:32 +0200
+
+AbstractController::ActionNotFound (The action 'index' could not be found for CategoriesController):
+  actionpack (4.1.4) lib/abstract_controller/base.rb:131:in `process'
+  actionview (4.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.4) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/AndersAkesson/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/AndersAkesson/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/AndersAkesson/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.7ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-07-15 18:02:11 +0200
+Processing by CategoriesController#index as HTML
+Completed 500 Internal Server Error in 2ms
+
+ActionView::MissingTemplate (Missing template categories/index, application/index with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+  * "/Applications/MAMP/htdocs/soup_to_bits/app/views"
+):
+  actionview (4.1.4) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.1.4) lib/action_view/lookup_context.rb:124:in `find'
+  actionview (4.1.4) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.1.4) lib/action_view/renderer/template_renderer.rb:41:in `determine_template'
+  actionview (4.1.4) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.1.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.4) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.4) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.4) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.4) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.4) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.4) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/AndersAkesson/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (4.1.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.4) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.4) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.4) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.4) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.4) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.4) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.4) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/AndersAkesson/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/AndersAkesson/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/AndersAkesson/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (0.5ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-07-15 18:03:40 +0200
+Processing by CategoriesController#index as HTML
+  Rendered categories/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 901ms (Views: 900.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-07-15 18:03:41 +0200
+
+
+Started GET "/assets/soups.css?body=1" for 127.0.0.1 at 2014-07-15 18:03:41 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-15 18:03:41 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-15 18:03:41 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-07-15 18:03:41 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-15 18:03:41 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-15 18:03:41 +0200
+
+
+Started GET "/assets/soups.js?body=1" for 127.0.0.1 at 2014-07-15 18:03:41 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-15 18:03:41 +0200
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-07-15 18:08:58 +0200
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered categories/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 21ms (Views: 11.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-07-15 18:08:58 +0200
+
+
+Started GET "/assets/soups.css?body=1" for 127.0.0.1 at 2014-07-15 18:08:58 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-15 18:08:58 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-15 18:08:58 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-15 18:08:58 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-07-15 18:08:58 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-15 18:08:58 +0200
+
+
+Started GET "/assets/soups.js?body=1" for 127.0.0.1 at 2014-07-15 18:08:58 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-15 18:08:58 +0200
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-07-15 18:09:47 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered categories/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-15 18:09:47 +0200
+
+
+Started GET "/assets/soups.css?body=1" for 127.0.0.1 at 2014-07-15 18:09:47 +0200
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-07-15 18:09:47 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-15 18:09:47 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-07-15 18:09:47 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-15 18:09:47 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-15 18:09:47 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-15 18:09:47 +0200
+
+
+Started GET "/assets/soups.js?body=1" for 127.0.0.1 at 2014-07-15 18:09:47 +0200
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-07-15 18:09:56 +0200
+
+AbstractController::ActionNotFound (The action 'show' could not be found for CategoriesController):
+  actionpack (4.1.4) lib/abstract_controller/base.rb:131:in `process'
+  actionview (4.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.4) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/AndersAkesson/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/AndersAkesson/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/AndersAkesson/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.5ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-07-15 18:09:56 +0200
+
+AbstractController::ActionNotFound (The action 'show' could not be found for CategoriesController):
+  actionpack (4.1.4) lib/abstract_controller/base.rb:131:in `process'
+  actionview (4.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.4) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/AndersAkesson/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/AndersAkesson/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/AndersAkesson/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.8ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-07-15 18:11:18 +0200
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 2]]
+  Rendered categories/index.html.erb within layouts/application (63.7ms)
+Completed 200 OK in 72ms (Views: 69.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-07-15 18:11:18 +0200
+
+
+Started GET "/assets/soups.css?body=1" for 127.0.0.1 at 2014-07-15 18:11:18 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-15 18:11:18 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-15 18:11:18 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-15 18:11:18 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-15 18:11:18 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-07-15 18:11:18 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-15 18:11:18 +0200
+
+
+Started GET "/assets/soups.js?body=1" for 127.0.0.1 at 2014-07-15 18:11:18 +0200
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-07-15 18:15:38 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 2]]
+  Rendered categories/index.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 22ms (Views: 17.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-15 18:15:38 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-15 18:15:38 +0200
+
+
+Started GET "/assets/soups.css?body=1" for 127.0.0.1 at 2014-07-15 18:15:38 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-15 18:15:38 +0200
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-07-15 18:15:38 +0200
+
+
+Started GET "/assets/soups.js?body=1" for 127.0.0.1 at 2014-07-15 18:15:38 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-07-15 18:15:38 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-15 18:15:38 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-15 18:15:38 +0200
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-07-15 18:15:39 +0200
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (13.1ms)
+Completed 500 Internal Server Error in 19ms
+
+ActionView::Template::Error (undefined local variable or method `category' for #<#<Class:0x007fc00456c630>:0x007fc0034f4af0>):
+    1: <h1><%= category.name %></h1>
+  app/views/categories/show.html.erb:1:in `_app_views_categories_show_html_erb__1195203823125983153_70231333010580'
+
+
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.1ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-07-15 18:15:39 +0200
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (9.5ms)
+Completed 500 Internal Server Error in 15ms
+
+ActionView::Template::Error (undefined local variable or method `category' for #<#<Class:0x007fc00456c630>:0x007fc00434c2b0>):
+    1: <h1><%= category.name %></h1>
+  app/views/categories/show.html.erb:1:in `_app_views_categories_show_html_erb__1195203823125983153_70231340561820'
+
+
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.8ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-07-15 18:15:58 +0200
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/soups.css?body=1" for 127.0.0.1 at 2014-07-15 18:15:58 +0200
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-07-15 18:15:58 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-15 18:15:58 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-15 18:15:58 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-15 18:15:58 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-07-15 18:15:58 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-15 18:15:58 +0200
+
+
+Started GET "/assets/soups.js?body=1" for 127.0.0.1 at 2014-07-15 18:15:58 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-15 18:15:58 +0200
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-07-15 18:18:24 +0200
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 7ms
+
+SyntaxError (/Applications/MAMP/htdocs/soup_to_bits/app/views/categories/show.html.erb:6: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Applications/MAMP/htdocs/soup_to_bits/app/views/categories/show.html.erb:8: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/categories/show.html.erb:6: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/categories/show.html.erb:8: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.3ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.5ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-07-15 18:19:02 +0200
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSoup Load (0.2ms)[0m  [1mSELECT "soups".* FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 1]]
+  Rendered categories/show.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 20ms (Views: 17.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/soups.css?body=1" for 127.0.0.1 at 2014-07-15 18:19:02 +0200
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-07-15 18:19:02 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-15 18:19:02 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-15 18:19:02 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-15 18:19:02 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-15 18:19:02 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-07-15 18:19:02 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-15 18:19:02 +0200
+
+
+Started GET "/assets/soups.js?body=1" for 127.0.0.1 at 2014-07-15 18:19:02 +0200
+
+
+Started GET "/soups/4" for 127.0.0.1 at 2014-07-15 18:19:04 +0200
+
+AbstractController::ActionNotFound (The action 'show' could not be found for SoupsController):
+  actionpack (4.1.4) lib/abstract_controller/base.rb:131:in `process'
+  actionview (4.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.4) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/AndersAkesson/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/AndersAkesson/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/AndersAkesson/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.7ms)
+
+
+Started GET "/soups/4" for 127.0.0.1 at 2014-07-15 18:19:04 +0200
+
+AbstractController::ActionNotFound (The action 'show' could not be found for SoupsController):
+  actionpack (4.1.4) lib/abstract_controller/base.rb:131:in `process'
+  actionview (4.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.4) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/AndersAkesson/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/AndersAkesson/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/AndersAkesson/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-15 18:19:08 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/railties-4.1.4/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-07-15 18:19:09 +0200
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 2]]
+  Rendered categories/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-07-15 18:21:19 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 2]]
+  Rendered categories/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-07-15 18:21:19 +0200
+
+
+Started GET "/assets/soups.css?body=1" for 127.0.0.1 at 2014-07-15 18:21:19 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-15 18:21:19 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-15 18:21:19 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-07-15 18:21:19 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-15 18:21:19 +0200
+
+
+Started GET "/assets/soups.js?body=1" for 127.0.0.1 at 2014-07-15 18:21:19 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-15 18:21:19 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-15 18:21:19 +0200
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-07-15 18:21:20 +0200
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSoup Load (0.1ms)[0m  [1mSELECT "soups".* FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 1]]
+  Rendered categories/show.html.erb within layouts/application (15.2ms)
+Completed 500 Internal Server Error in 20ms
+
+ActionView::Template::Error (undefined local variable or method `categories' for #<#<Class:0x007fc00456c630>:0x007fc003a65d90>):
+    5: 	<% end %>
+    6: </ul>
+    7: 
+    8: <p><%= link_to "Back to Soup Categories", categories.path %></p>
+  app/views/categories/show.html.erb:8:in `_app_views_categories_show_html_erb__1195203823125983153_70231335838320'
+
+
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.0ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-07-15 18:21:20 +0200
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSoup Load (0.1ms)[0m  [1mSELECT "soups".* FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 1]]
+  Rendered categories/show.html.erb within layouts/application (48.0ms)
+Completed 500 Internal Server Error in 53ms
+
+ActionView::Template::Error (undefined local variable or method `categories' for #<#<Class:0x007fc00456c630>:0x007fc0035dc760>):
+    5: 	<% end %>
+    6: </ul>
+    7: 
+    8: <p><%= link_to "Back to Soup Categories", categories.path %></p>
+  app/views/categories/show.html.erb:8:in `_app_views_categories_show_html_erb__1195203823125983153_70231333482420'
+
+
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.8ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-07-15 18:22:37 +0200
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSoup Load (0.2ms)[0m  [1mSELECT "soups".* FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 1]]
+  Rendered categories/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-15 18:22:37 +0200
+
+
+Started GET "/assets/soups.css?body=1" for 127.0.0.1 at 2014-07-15 18:22:37 +0200
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-07-15 18:22:37 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-15 18:22:37 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-15 18:22:37 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-15 18:22:37 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-07-15 18:22:37 +0200
+
+
+Started GET "/assets/soups.js?body=1" for 127.0.0.1 at 2014-07-15 18:22:37 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-15 18:22:37 +0200
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-07-15 18:22:39 +0200
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 2]]
+  Rendered categories/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-07-15 18:26:25 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 2]]
+  Rendered categories/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 19ms (Views: 15.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-15 18:26:25 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-15 18:26:25 +0200
+
+
+Started GET "/assets/soups.css?body=1" for 127.0.0.1 at 2014-07-15 18:26:25 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-15 18:26:25 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-07-15 18:26:25 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-15 18:26:25 +0200
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-07-15 18:26:25 +0200
+
+
+Started GET "/assets/soups.js?body=1" for 127.0.0.1 at 2014-07-15 18:26:25 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-15 18:26:25 +0200
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-07-15 18:26:26 +0200
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSoup Load (0.2ms)[0m  [1mSELECT "soups".* FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 1]]
+  Rendered categories/show.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/soups/4" for 127.0.0.1 at 2014-07-15 18:26:27 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSoup Load (0.3ms)[0m  SELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered soups/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 13ms (Views: 9.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-07-15 18:26:29 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 2]]
+  Rendered categories/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/categories/2" for 127.0.0.1 at 2014-07-15 18:26:30 +0200
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mSoup Load (0.2ms)[0m  [1mSELECT "soups".* FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 2]]
+  Rendered categories/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 13ms (Views: 10.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/soups/1" for 127.0.0.1 at 2014-07-15 18:26:31 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSoup Load (0.1ms)[0m  SELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered soups/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-07-15 18:26:35 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 2]]
+  Rendered categories/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/categories/2" for 127.0.0.1 at 2014-07-15 18:26:36 +0200
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCategory Load (0.6ms)[0m  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mSoup Load (0.2ms)[0m  [1mSELECT "soups".* FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 2]]
+  Rendered categories/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 19ms (Views: 16.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-07-15 18:26:37 +0200
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 2]]
+  Rendered categories/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-07-15 18:26:40 +0200
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSoup Load (0.2ms)[0m  SELECT "soups".* FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 1]]
+  Rendered categories/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/soups/4" for 127.0.0.1 at 2014-07-15 18:26:41 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSoup Load (0.2ms)[0m  [1mSELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered soups/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-07-15 18:26:43 +0200
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 2]]
+  Rendered categories/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-07-15 18:28:53 +0200
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSoup Load (0.1ms)[0m  SELECT "soups".* FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 1]]
+  Rendered categories/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/soups.css?body=1" for 127.0.0.1 at 2014-07-15 18:28:53 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-15 18:28:53 +0200
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-07-15 18:28:53 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-15 18:28:53 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-15 18:28:53 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-15 18:28:53 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-07-15 18:28:53 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-15 18:28:53 +0200
+
+
+Started GET "/assets/soups.js?body=1" for 127.0.0.1 at 2014-07-15 18:28:53 +0200
+
+
+Started GET "/soups/4" for 127.0.0.1 at 2014-07-15 18:28:54 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSoup Load (0.2ms)[0m  [1mSELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered soups/show.html.erb within layouts/application (14.2ms)
+Completed 500 Internal Server Error in 21ms
+
+ActionView::Template::Error (undefined local variable or method `soup' for #<#<Class:0x007fc00712c810>:0x007fc003a4eb90>):
+    1: <h1><%= @soup.name %></h1>
+    2: 
+    3: <% if soup.featured? %>
+    4: 	<p>This soup is featured</p>
+    5: 	<% else %>
+    6: 	<p>This soup sucks</p>
+  app/views/soups/show.html.erb:3:in `_app_views_soups_show_html_erb___2318892327704788509_70231335790580'
+
+
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.6ms)
+
+
+Started GET "/soups/4" for 127.0.0.1 at 2014-07-15 18:28:55 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSoup Load (0.2ms)[0m  SELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered soups/show.html.erb within layouts/application (54.5ms)
+Completed 500 Internal Server Error in 61ms
+
+ActionView::Template::Error (undefined local variable or method `soup' for #<#<Class:0x007fc00712c810>:0x007fc0035d57d0>):
+    1: <h1><%= @soup.name %></h1>
+    2: 
+    3: <% if soup.featured? %>
+    4: 	<p>This soup is featured</p>
+    5: 	<% else %>
+    6: 	<p>This soup sucks</p>
+  app/views/soups/show.html.erb:3:in `_app_views_soups_show_html_erb___2318892327704788509_70231333445940'
+
+
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.9ms)
+
+
+Started GET "/soups/4" for 127.0.0.1 at 2014-07-15 18:29:06 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSoup Load (0.1ms)[0m  [1mSELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered soups/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-07-15 18:29:06 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-15 18:29:06 +0200
+
+
+Started GET "/assets/soups.css?body=1" for 127.0.0.1 at 2014-07-15 18:29:06 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-15 18:29:06 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-15 18:29:06 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-15 18:29:06 +0200
+
+
+Started GET "/assets/soups.js?body=1" for 127.0.0.1 at 2014-07-15 18:29:06 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-07-15 18:29:06 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-15 18:29:06 +0200
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-07-15 18:29:09 +0200
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSoup Load (0.2ms)[0m  [1mSELECT "soups".* FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 1]]
+  Rendered categories/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 15ms (Views: 12.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-07-15 18:29:11 +0200
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 2]]
+  Rendered categories/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/categories/2" for 127.0.0.1 at 2014-07-15 18:29:12 +0200
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSoup Load (0.2ms)[0m  SELECT "soups".* FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 2]]
+  Rendered categories/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-07-15 18:29:14 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 2]]
+  Rendered categories/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-07-15 18:29:15 +0200
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSoup Load (0.1ms)[0m  [1mSELECT "soups".* FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 1]]
+  Rendered categories/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/soups/4" for 127.0.0.1 at 2014-07-15 18:29:16 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSoup Load (0.1ms)[0m  SELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered soups/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-07-15 18:29:32 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 2]]
+  Rendered categories/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/categories/2" for 127.0.0.1 at 2014-07-15 18:29:33 +0200
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mSoup Load (0.1ms)[0m  [1mSELECT "soups".* FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 2]]
+  Rendered categories/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/soups/1" for 127.0.0.1 at 2014-07-15 18:29:34 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSoup Load (0.1ms)[0m  SELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered soups/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-07-15 18:29:38 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 2]]
+  Rendered categories/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-07-15 18:32:52 +0200
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (0.3ms)[0m  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSoup Load (0.2ms)[0m  [1mSELECT "soups".* FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 1]]
+  Rendered categories/show.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 32ms (Views: 20.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/categories/1.json" for 127.0.0.1 at 2014-07-15 18:32:56 +0200
+Processing by CategoriesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 3ms
+
+ActionView::MissingTemplate (Missing template categories/show, application/show with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+  * "/Applications/MAMP/htdocs/soup_to_bits/app/views"
+):
+  actionview (4.1.4) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.1.4) lib/action_view/lookup_context.rb:124:in `find'
+  actionview (4.1.4) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.1.4) lib/action_view/renderer/template_renderer.rb:41:in `determine_template'
+  actionview (4.1.4) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.1.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.4) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.4) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.4) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.4) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.4) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.4) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/AndersAkesson/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (4.1.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.4) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.4) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.4) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.4) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.4) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.4) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.4) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/AndersAkesson/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/AndersAkesson/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/AndersAkesson/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (0.5ms)
+
+
+Started GET "/soups/4" for 127.0.0.1 at 2014-07-15 18:32:59 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSoup Load (0.3ms)[0m  [1mSELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered soups/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 11ms (Views: 8.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/soups/4.json" for 127.0.0.1 at 2014-07-15 18:33:03 +0200
+Processing by SoupsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[35mSoup Load (0.2ms)[0m  SELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1  [["id", 4]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-07-15 18:33:15 +0200
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSoup Load (0.2ms)[0m  SELECT "soups".* FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 1]]
+  Rendered categories/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/soups" for 127.0.0.1 at 2014-07-15 18:36:06 +0200
+
+SyntaxError (/Applications/MAMP/htdocs/soup_to_bits/app/controllers/soups_controller.rb:15: syntax error, unexpected tIVAR, expecting '}'
+			format.json {render :json @soups }
+			                                ^):
+  app/controllers/soups_controller.rb:15: syntax error, unexpected tIVAR, expecting '}'
+
+
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.8ms)
+
+
+Started GET "/soups" for 127.0.0.1 at 2014-07-15 18:37:25 +0200
+Processing by SoupsController#index as HTML
+Completed 406 Not Acceptable in 3ms
+
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  app/controllers/soups_controller.rb:14:in `index'
+
+
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.2ms)
+
+
+Started GET "/soups" for 127.0.0.1 at 2014-07-15 18:37:39 +0200
+Processing by SoupsController#index as HTML
+Completed 406 Not Acceptable in 1ms
+
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  app/controllers/soups_controller.rb:14:in `index'
+
+
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.2ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.8ms)
+
+
+Started GET "/soups" for 127.0.0.1 at 2014-07-15 18:38:15 +0200
+Processing by SoupsController#index as HTML
+Completed 406 Not Acceptable in 4ms
+
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  app/controllers/soups_controller.rb:14:in `index'
+
+
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (56.3ms)
+
+
+Started GET "/soups.json" for 127.0.0.1 at 2014-07-15 18:38:59 +0200
+Processing by SoupsController#index as JSON
+  [1m[36mSoup Load (0.5ms)[0m  [1mSELECT "soups".* FROM "soups"[0m
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/soups" for 127.0.0.1 at 2014-07-15 19:05:17 +0200
+Processing by SoupsController#index as HTML
+Completed 406 Not Acceptable in 5ms
+
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  app/controllers/soups_controller.rb:14:in `index'
+
+
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.2ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.2ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-07-15 19:05:18 +0200
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSoup Load (0.3ms)[0m  [1mSELECT "soups".* FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 1]]
+  Rendered categories/show.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 30ms (Views: 18.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-07-15 19:05:18 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-15 19:05:18 +0200
+
+
+Started GET "/assets/soups.css?body=1" for 127.0.0.1 at 2014-07-15 19:05:18 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-15 19:05:18 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-15 19:05:18 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-15 19:05:18 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-07-15 19:05:18 +0200
+
+
+Started GET "/assets/soups.js?body=1" for 127.0.0.1 at 2014-07-15 19:05:18 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-15 19:05:18 +0200
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-07-15 19:05:19 +0200
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 2]]
+  Rendered categories/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 51ms (Views: 47.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-07-15 19:05:20 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 2]]
+  Rendered categories/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-15 19:05:20 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-15 19:05:20 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-15 19:05:20 +0200
+
+
+Started GET "/assets/soups.css?body=1" for 127.0.0.1 at 2014-07-15 19:05:20 +0200
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-07-15 19:05:20 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-15 19:05:21 +0200
+
+
+Started GET "/assets/soups.js?body=1" for 127.0.0.1 at 2014-07-15 19:05:21 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-07-15 19:05:21 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-15 19:05:21 +0200
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-07-15 19:05:22 +0200
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSoup Load (0.2ms)[0m  [1mSELECT "soups".* FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 1]]
+  Rendered categories/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 14ms (Views: 9.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/soups/4" for 127.0.0.1 at 2014-07-15 19:05:23 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSoup Load (0.3ms)[0m  SELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered soups/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-07-15 19:05:25 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 2]]
+  Rendered categories/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 20ms (Views: 17.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/categories/2" for 127.0.0.1 at 2014-07-15 19:05:26 +0200
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mSoup Load (0.1ms)[0m  [1mSELECT "soups".* FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 2]]
+  Rendered categories/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-07-15 19:05:26 +0200
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 2]]
+  Rendered categories/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-15 19:06:41 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 2]]
+  Rendered categories/index.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 24ms (Views: 19.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-07-15 19:06:41 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-15 19:06:41 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-15 19:06:41 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-15 19:06:41 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-15 19:06:41 +0200
+
+
+Started GET "/assets/soups.css?body=1" for 127.0.0.1 at 2014-07-15 19:06:41 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-07-15 19:06:41 +0200
+
+
+Started GET "/assets/soups.js?body=1" for 127.0.0.1 at 2014-07-15 19:06:41 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-15 19:06:41 +0200
+
+
+Started GET "/allcategories" for 127.0.0.1 at 2014-07-15 19:08:20 +0200
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 2]]
+  Rendered categories/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 21ms (Views: 15.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-15 19:08:20 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-15 19:08:20 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-15 19:08:20 +0200
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-07-15 19:08:20 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-15 19:08:20 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-07-15 19:08:20 +0200
+
+
+Started GET "/assets/soups.css?body=1" for 127.0.0.1 at 2014-07-15 19:08:20 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-15 19:08:20 +0200
+
+
+Started GET "/assets/soups.js?body=1" for 127.0.0.1 at 2014-07-15 19:08:20 +0200
+
+
+Started GET "/allcategories" for 127.0.0.1 at 2014-07-15 19:08:22 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 2]]
+  Rendered categories/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/soups.css?body=1" for 127.0.0.1 at 2014-07-15 19:08:22 +0200
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-07-15 19:08:22 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-15 19:08:22 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-15 19:08:22 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-15 19:08:22 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-07-15 19:08:22 +0200
+
+
+Started GET "/assets/soups.js?body=1" for 127.0.0.1 at 2014-07-15 19:08:22 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-15 19:08:22 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-15 19:08:22 +0200
+
+
+Started GET "/allcategories" for 127.0.0.1 at 2014-07-15 19:10:09 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-15 19:10:09 +0200
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 2]]
+  Rendered categories/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 22ms (Views: 17.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-15 19:10:09 +0200
+
+
+Started GET "/assets/soups.css?body=1" for 127.0.0.1 at 2014-07-15 19:10:09 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-15 19:10:09 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-15 19:10:09 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-15 19:10:09 +0200
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-07-15 19:10:09 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-07-15 19:10:09 +0200
+
+
+Started GET "/assets/soups.js?body=1" for 127.0.0.1 at 2014-07-15 19:10:09 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-15 19:10:09 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-15 19:16:44 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 2]]
+  Rendered categories/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 21ms (Views: 16.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-07-15 19:16:44 +0200
+
+
+Started GET "/assets/soups.css?body=1" for 127.0.0.1 at 2014-07-15 19:16:44 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-07-15 19:16:44 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-15 19:16:44 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-15 19:16:44 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-15 19:16:44 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-15 19:16:44 +0200
+
+
+Started GET "/assets/soups.js?body=1" for 127.0.0.1 at 2014-07-15 19:16:44 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-15 19:16:44 +0200
+
+
+Started GET "/categories/2" for 127.0.0.1 at 2014-07-15 19:16:45 +0200
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mSoup Load (0.2ms)[0m  [1mSELECT "soups".* FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 2]]
+  Rendered categories/show.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 18ms (Views: 15.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/soups/1" for 127.0.0.1 at 2014-07-15 19:16:46 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSoup Load (0.2ms)[0m  SELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered soups/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 12ms (Views: 9.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/soups/1/toggle_featured" for 127.0.0.1 at 2014-07-15 19:16:47 +0200
+
+AbstractController::ActionNotFound (The action 'toggle_featured' could not be found for SoupsController):
+  actionpack (4.1.4) lib/abstract_controller/base.rb:131:in `process'
+  actionview (4.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.4) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/AndersAkesson/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/AndersAkesson/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/AndersAkesson/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.5ms)
+
+
+Started GET "/soups/1/toggle_featured" for 127.0.0.1 at 2014-07-15 19:16:47 +0200
+
+AbstractController::ActionNotFound (The action 'toggle_featured' could not be found for SoupsController):
+  actionpack (4.1.4) lib/abstract_controller/base.rb:131:in `process'
+  actionview (4.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.4) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/AndersAkesson/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/AndersAkesson/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/AndersAkesson/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-15 19:18:01 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 2]]
+  Rendered categories/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 22ms (Views: 16.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/soups.css?body=1" for 127.0.0.1 at 2014-07-15 19:18:01 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-15 19:18:01 +0200
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-07-15 19:18:01 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-07-15 19:18:01 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-15 19:18:01 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-15 19:18:01 +0200
+
+
+Started GET "/assets/soups.js?body=1" for 127.0.0.1 at 2014-07-15 19:18:01 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-15 19:18:01 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-15 19:18:01 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-15 19:22:41 +0200
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 2]]
+  Rendered categories/index.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 24ms (Views: 19.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-07-15 19:22:42 +0200
+
+
+Started GET "/assets/soups.css?body=1" for 127.0.0.1 at 2014-07-15 19:22:42 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-15 19:22:42 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-15 19:22:42 +0200
+
+
+Started GET "/assets/soups.js?body=1" for 127.0.0.1 at 2014-07-15 19:22:42 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-07-15 19:22:42 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-15 19:22:42 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-15 19:22:42 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-15 19:22:42 +0200
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-07-15 19:22:43 +0200
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSoup Load (0.3ms)[0m  SELECT "soups".* FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 1]]
+  Rendered categories/show.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 21ms (Views: 18.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/soups/4" for 127.0.0.1 at 2014-07-15 19:22:44 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSoup Load (0.3ms)[0m  [1mSELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered soups/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 21ms (Views: 17.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/soups/4/toggle_featured" for 127.0.0.1 at 2014-07-15 19:22:45 +0200
+Processing by SoupsController#toggle_featured as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSoup Load (0.2ms)[0m  SELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "soups" SET "featured" = ?, "updated_at" = ? WHERE "soups"."id" = 4  [["featured", "t"], ["updated_at", "2014-07-15 17:22:45.456292"]]
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/soups/4
+Completed 302 Found in 11ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/soups/4" for 127.0.0.1 at 2014-07-15 19:22:45 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSoup Load (0.4ms)[0m  SELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered soups/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 11ms (Views: 6.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/soups/4/toggle_featured" for 127.0.0.1 at 2014-07-15 19:22:46 +0200
+Processing by SoupsController#toggle_featured as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSoup Load (0.2ms)[0m  [1mSELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "soups" SET "featured" = ?, "updated_at" = ? WHERE "soups"."id" = 4[0m  [["featured", "f"], ["updated_at", "2014-07-15 17:22:46.092199"]]
+  [1m[35m (2.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/soups/4
+Completed 302 Found in 8ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/soups/4" for 127.0.0.1 at 2014-07-15 19:22:46 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSoup Load (0.1ms)[0m  [1mSELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered soups/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/soups/4/toggle_featured" for 127.0.0.1 at 2014-07-15 19:22:46 +0200
+Processing by SoupsController#toggle_featured as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSoup Load (0.1ms)[0m  SELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "soups" SET "featured" = ?, "updated_at" = ? WHERE "soups"."id" = 4  [["featured", "t"], ["updated_at", "2014-07-15 17:22:46.684988"]]
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/soups/4
+Completed 302 Found in 8ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/soups/4" for 127.0.0.1 at 2014-07-15 19:22:46 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSoup Load (0.2ms)[0m  SELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered soups/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/soups/4/toggle_featured" for 127.0.0.1 at 2014-07-15 19:22:47 +0200
+Processing by SoupsController#toggle_featured as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSoup Load (0.2ms)[0m  [1mSELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "soups" SET "featured" = ?, "updated_at" = ? WHERE "soups"."id" = 4[0m  [["featured", "f"], ["updated_at", "2014-07-15 17:22:47.283048"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/soups/4
+Completed 302 Found in 8ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/soups/4" for 127.0.0.1 at 2014-07-15 19:22:47 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSoup Load (0.1ms)[0m  [1mSELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered soups/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/soups/4/toggle_featured" for 127.0.0.1 at 2014-07-15 19:22:47 +0200
+Processing by SoupsController#toggle_featured as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSoup Load (0.1ms)[0m  SELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "soups" SET "featured" = ?, "updated_at" = ? WHERE "soups"."id" = 4  [["featured", "t"], ["updated_at", "2014-07-15 17:22:47.842930"]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/soups/4
+Completed 302 Found in 8ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/soups/4" for 127.0.0.1 at 2014-07-15 19:22:47 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSoup Load (0.1ms)[0m  SELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered soups/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/soups/4/toggle_featured" for 127.0.0.1 at 2014-07-15 19:22:48 +0200
+Processing by SoupsController#toggle_featured as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSoup Load (0.2ms)[0m  [1mSELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "soups" SET "featured" = ?, "updated_at" = ? WHERE "soups"."id" = 4[0m  [["featured", "f"], ["updated_at", "2014-07-15 17:22:48.215454"]]
+  [1m[35m (2.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/soups/4
+Completed 302 Found in 8ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/soups/4" for 127.0.0.1 at 2014-07-15 19:22:48 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSoup Load (0.2ms)[0m  [1mSELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered soups/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/soups/4/toggle_featured" for 127.0.0.1 at 2014-07-15 19:22:48 +0200
+Processing by SoupsController#toggle_featured as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSoup Load (0.2ms)[0m  SELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "soups" SET "featured" = ?, "updated_at" = ? WHERE "soups"."id" = 4  [["featured", "t"], ["updated_at", "2014-07-15 17:22:48.697784"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/soups/4
+Completed 302 Found in 8ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/soups/4" for 127.0.0.1 at 2014-07-15 19:22:48 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSoup Load (0.2ms)[0m  SELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered soups/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/soups/4/toggle_featured" for 127.0.0.1 at 2014-07-15 19:22:49 +0200
+Processing by SoupsController#toggle_featured as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSoup Load (0.4ms)[0m  [1mSELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "soups" SET "featured" = ?, "updated_at" = ? WHERE "soups"."id" = 4[0m  [["featured", "f"], ["updated_at", "2014-07-15 17:22:49.223635"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/soups/4
+Completed 302 Found in 9ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/soups/4" for 127.0.0.1 at 2014-07-15 19:22:49 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSoup Load (0.2ms)[0m  [1mSELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered soups/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/soups/4" for 127.0.0.1 at 2014-07-15 19:26:35 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSoup Load (0.1ms)[0m  SELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered soups/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 17ms (Views: 7.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-07-15 19:26:35 +0200
+
+
+Started GET "/assets/soups.css?body=1" for 127.0.0.1 at 2014-07-15 19:26:36 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-15 19:26:36 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-07-15 19:26:36 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-15 19:26:36 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-15 19:26:36 +0200
+
+
+Started GET "/assets/soups.js?body=1" for 127.0.0.1 at 2014-07-15 19:26:36 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-15 19:26:36 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-15 19:26:36 +0200
+
+
+Started GET "/soups/4/toggle_featured" for 127.0.0.1 at 2014-07-15 19:26:37 +0200
+Processing by SoupsController#toggle_featured as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSoup Load (0.2ms)[0m  [1mSELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "soups" SET "featured" = ?, "updated_at" = ? WHERE "soups"."id" = 4[0m  [["featured", "t"], ["updated_at", "2014-07-15 17:26:37.464903"]]
+  [1m[35m (102.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/soups/4
+Completed 302 Found in 110ms (ActiveRecord: 102.8ms)
+
+
+Started GET "/soups/4" for 127.0.0.1 at 2014-07-15 19:26:37 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSoup Load (0.2ms)[0m  [1mSELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered soups/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/soups/4/toggle_featured" for 127.0.0.1 at 2014-07-15 19:26:39 +0200
+Processing by SoupsController#toggle_featured as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSoup Load (0.2ms)[0m  SELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "soups" SET "featured" = ?, "updated_at" = ? WHERE "soups"."id" = 4  [["featured", "f"], ["updated_at", "2014-07-15 17:26:39.113221"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/soups/4
+Completed 302 Found in 18ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/soups/4" for 127.0.0.1 at 2014-07-15 19:26:39 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSoup Load (0.2ms)[0m  SELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered soups/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/soups/4/toggle_featured" for 127.0.0.1 at 2014-07-15 19:26:39 +0200
+Processing by SoupsController#toggle_featured as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSoup Load (0.1ms)[0m  [1mSELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "soups" SET "featured" = ?, "updated_at" = ? WHERE "soups"."id" = 4[0m  [["featured", "t"], ["updated_at", "2014-07-15 17:26:39.813429"]]
+  [1m[35m (2.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/soups/4
+Completed 302 Found in 8ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/soups/4" for 127.0.0.1 at 2014-07-15 19:26:39 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSoup Load (0.2ms)[0m  [1mSELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered soups/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/soups/4/toggle_featured" for 127.0.0.1 at 2014-07-15 19:26:40 +0200
+Processing by SoupsController#toggle_featured as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSoup Load (0.1ms)[0m  SELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "soups" SET "featured" = ?, "updated_at" = ? WHERE "soups"."id" = 4  [["featured", "f"], ["updated_at", "2014-07-15 17:26:40.287764"]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/soups/4
+Completed 302 Found in 8ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/soups/4" for 127.0.0.1 at 2014-07-15 19:26:40 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSoup Load (0.2ms)[0m  SELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered soups/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/soups/4/toggle_featured" for 127.0.0.1 at 2014-07-15 19:26:40 +0200
+Processing by SoupsController#toggle_featured as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSoup Load (0.1ms)[0m  [1mSELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "soups" SET "featured" = ?, "updated_at" = ? WHERE "soups"."id" = 4[0m  [["featured", "t"], ["updated_at", "2014-07-15 17:26:40.736086"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/soups/4
+Completed 302 Found in 8ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/soups/4" for 127.0.0.1 at 2014-07-15 19:26:40 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSoup Load (0.1ms)[0m  [1mSELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered soups/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/soups/4/toggle_featured" for 127.0.0.1 at 2014-07-15 19:26:41 +0200
+Processing by SoupsController#toggle_featured as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSoup Load (0.2ms)[0m  SELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "soups" SET "featured" = ?, "updated_at" = ? WHERE "soups"."id" = 4  [["featured", "f"], ["updated_at", "2014-07-15 17:26:41.224396"]]
+  [1m[36m (4.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/soups/4
+Completed 302 Found in 10ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/soups/4" for 127.0.0.1 at 2014-07-15 19:26:41 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSoup Load (0.1ms)[0m  SELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered soups/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/soups/4/toggle_featured" for 127.0.0.1 at 2014-07-15 19:26:41 +0200
+Processing by SoupsController#toggle_featured as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSoup Load (0.2ms)[0m  [1mSELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "soups" SET "featured" = ?, "updated_at" = ? WHERE "soups"."id" = 4[0m  [["featured", "t"], ["updated_at", "2014-07-15 17:26:41.748088"]]
+  [1m[35m (2.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/soups/4
+Completed 302 Found in 8ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/soups/4" for 127.0.0.1 at 2014-07-15 19:26:41 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSoup Load (0.2ms)[0m  [1mSELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered soups/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/soups/4/toggle_featured" for 127.0.0.1 at 2014-07-15 19:26:42 +0200
+Processing by SoupsController#toggle_featured as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSoup Load (0.1ms)[0m  SELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "soups" SET "featured" = ?, "updated_at" = ? WHERE "soups"."id" = 4  [["featured", "f"], ["updated_at", "2014-07-15 17:26:42.155415"]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/soups/4
+Completed 302 Found in 8ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/soups/4" for 127.0.0.1 at 2014-07-15 19:26:42 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSoup Load (0.2ms)[0m  SELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered soups/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/soups/4" for 127.0.0.1 at 2014-07-15 19:29:44 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSoup Load (0.1ms)[0m  [1mSELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered soups/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-15 19:29:44 +0200
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-07-15 19:29:44 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-15 19:29:44 +0200
+
+
+Started GET "/assets/soups.css?body=1" for 127.0.0.1 at 2014-07-15 19:29:44 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-15 19:29:44 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-07-15 19:29:44 +0200
+
+
+Started GET "/assets/soups.js?body=1" for 127.0.0.1 at 2014-07-15 19:29:44 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-15 19:29:44 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-15 19:29:44 +0200
+
+
+Started GET "/soups/4?admin=true" for 127.0.0.1 at 2014-07-15 19:30:06 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"admin"=>"true", "id"=>"4"}
+  [1m[35mSoup Load (0.1ms)[0m  SELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered soups/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-15 19:30:06 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-15 19:30:06 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-15 19:30:06 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-15 19:30:06 +0200
+
+
+Started GET "/assets/soups.css?body=1" for 127.0.0.1 at 2014-07-15 19:30:06 +0200
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-07-15 19:30:06 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-07-15 19:30:06 +0200
+
+
+Started GET "/assets/soups.js?body=1" for 127.0.0.1 at 2014-07-15 19:30:06 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-15 19:30:06 +0200
+
+
+Started GET "/soups/4/toggle_featured" for 127.0.0.1 at 2014-07-15 19:30:08 +0200
+Processing by SoupsController#toggle_featured as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSoup Load (0.2ms)[0m  [1mSELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "soups" SET "featured" = ?, "updated_at" = ? WHERE "soups"."id" = 4[0m  [["featured", "t"], ["updated_at", "2014-07-15 17:30:08.228485"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/soups/4
+Completed 302 Found in 7ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/soups/4" for 127.0.0.1 at 2014-07-15 19:30:08 +0200
+Processing by SoupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSoup Load (0.2ms)[0m  [1mSELECT  "soups".* FROM "soups"  WHERE "soups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered soups/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-07-15 19:37:21 +0200
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 2]]
+  Rendered categories/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 23ms (Views: 17.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-15 19:37:21 +0200
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-07-15 19:37:21 +0200
+
+
+Started GET "/assets/soups.css?body=1" for 127.0.0.1 at 2014-07-15 19:37:21 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-15 19:37:21 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-15 19:37:21 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-15 19:37:21 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-07-15 19:37:21 +0200
+
+
+Started GET "/assets/soups.js?body=1" for 127.0.0.1 at 2014-07-15 19:37:21 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-15 19:37:21 +0200
+
+
+Started GET "/categories/super_secret" for 127.0.0.1 at 2014-07-15 19:37:29 +0200
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"super_secret"}
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Category with 'id'=super_secret):
+  app/controllers/categories_controller.rb:7:in `show'
+
+
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/AndersAkesson/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-15 19:38:25 +0200
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 2]]
+  Rendered categories/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-07-15 19:38:25 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-15 19:38:25 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-15 19:38:25 +0200
+
+
+Started GET "/assets/soups.css?body=1" for 127.0.0.1 at 2014-07-15 19:38:25 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-15 19:38:25 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-07-15 19:38:25 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-15 19:38:25 +0200
+
+
+Started GET "/assets/soups.js?body=1" for 127.0.0.1 at 2014-07-15 19:38:25 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-15 19:38:25 +0200
+
+
+Started GET "/secret_soups" for 127.0.0.1 at 2014-07-15 19:38:38 +0200
+Processing by SoupsController#secret_soups as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-15 19:38:38 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 2]]
+  Rendered categories/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-15 19:39:35 +0200
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 2]]
+  Rendered categories/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-07-15 19:39:35 +0200
+
+
+Started GET "/assets/soups.css?body=1" for 127.0.0.1 at 2014-07-15 19:39:35 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-15 19:39:35 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-07-15 19:39:35 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-15 19:39:35 +0200
+
+
+Started GET "/assets/soups.js?body=1" for 127.0.0.1 at 2014-07-15 19:39:35 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-15 19:39:35 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-15 19:39:35 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-15 19:39:35 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-15 19:39:38 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?  [["category_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "soups"  WHERE "soups"."category_id" = ?[0m  [["category_id", 2]]
+  Rendered categories/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-07-15 19:39:38 +0200
+
+
+Started GET "/assets/soups.css?body=1" for 127.0.0.1 at 2014-07-15 19:39:38 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-15 19:39:38 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-15 19:39:38 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-15 19:39:38 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-15 19:39:38 +0200
+
+
+Started GET "/assets/soups.js?body=1" for 127.0.0.1 at 2014-07-15 19:39:38 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-15 19:39:38 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-07-15 19:39:38 +0200
